@@ -1,0 +1,96 @@
+{{# partial "titulo" }}
+    <title>Registro de tramos</title>
+    <link rel="stylesheet" type="text/css" href="../css/tramo.css">
+{{/partial}}
+
+{{#partial "contenido" }}
+<div id="tramos" class="container">
+    <h2>Registrá tu Tramo</h2>
+     <form method="POST" action="/tramos">
+        <div>
+          <label for="tipoTransporte">Tipo de Transporte:</label>
+          <select class=" input" id="tipoTransporte" name="tipoTransporte" required>
+            <option value="" selected> Seleccione ...</option>
+            <option value="publico">Público</option>
+            <option value="privado">Privado</option>
+          </select>
+
+        </div>
+        <div id="privado" class="row">
+            <div class="col-6">
+                <h4>Dirección de partida<h4>
+                <label for="localidadInicio">Localidad:</label>
+                <input class="input" name="localidadInicio" type="number" min="1" max="100" ><br>
+
+                <label for="calleInicio">Calle:</label>
+                <input class="input" name="calleInicio" type="text"><br>
+
+                <label for="alturaInicio">Altura:</label>
+                <input class="input" name="alturaInicio" type="number" min="1" max="11000" ><br>
+            </div>
+            <div class="col-6">
+                <h4>Dirección de llegada<h4>
+                <label for="localidadFin">Localidad:</label>
+                <input class="input" name="localidadFin" type="number" min="1" max="100" ><br>
+
+                <label for="calleFin">Calle:</label>
+                <input class="input" name="calleFin" type="text"><br>
+
+                <label for="alturaFin">Altura:</label>
+                <input class="input" name="alturaFin" type="number" min="1" max="11000" ><br>
+            </div>
+        </div>
+        <div id="publico">
+
+            <label for="Linea">Linea:</label>
+            <input class="input" name="linea" type="text"><br>
+
+            <label for="kmPartida">KM de partida:</label>
+            <input class="input" name="kmPartida" type="number"><br>
+
+            <label for="kmLlegada">KM de llegada:</label>
+            <input class="input" name="kmLlegada" type="number"><br>
+
+        </div>
+
+          <br>
+        <div id="enComun">
+            <label for="combustibleXKm">Combustible por KM:</label>
+            <input class="input" name="combustibleXKm" type="number" min="1" max="1000" ><br>
+
+            <label for="tipoConsumo">Tipo De Consumo:</label>
+             <select class="input" name="tipoConsumo" id="tipo-de-consumo-select">
+                <option value="">--Por favor: elija una opción--</option>
+                <option value = "GASNATURAL">Gas Natural</option>
+                <option value = "DIESEL">Diesel</option>
+                <option value = "NAFTA">Nafta</option>
+                <option value = "CARBON">Carbon</option>
+                <option value = "GASOILCONSUMIDO">Gasoil Consumido</option>
+                <option value = "NAFTACONSUMIDO">Nafta Consumida</option>
+                <option value = "ELECTRICIDAD">Electricidad</option>
+                <option value = "CAMION">Camion</option>
+                <option value = "UTILITARIO">Utilitario</option>
+                <option value = "DISTANCIAMEDIARECORRIDA">Distancia Media Recorrida</option>
+             </select>
+
+        </div>
+        <input type="submit" value="Registrar Tramo">
+      </form>
+</div>
+{{/partial}}
+
+{{# partial "js"}}
+ document.getElementById('publico').style.display = "none";
+    document.getElementById('privado').style.display = "none";
+    document.querySelector('#tipoTransporte').addEventListener('change',function(){
+        if(document.getElementById('tipoTransporte').value == "publico"){
+            document.getElementById('publico').style.display = "block";
+            document.getElementById('privado').style.display = "none";
+        }else{
+            document.getElementById('privado').style.display = "block";
+            document.getElementById('publico').style.display = "none";
+        }
+    });
+{{/partial}}
+
+{{> layout.html.hbs }}

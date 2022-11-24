@@ -1,0 +1,44 @@
+body{
+	background-color: gray;
+	margin-left:5%;
+	margin-right:5%;
+}
+
+.propuesta{
+	border: 1px solid black;
+ 	border-radius: 1em;
+  	padding: 10px;
+	position: relative;
+	margin-top: 1%;
+	margin: 2px;
+	
+	width: 20%;
+	display: inline-grid;
+	float: left;
+}
+
+h1{
+	position:relative;
+	left: 45%;
+}
+
+.boton_vincular{
+	padding-right: 45px;
+	padding-left: 45px;
+	margin-right: 5px;
+	margin-left: 15px;
+	
+}
+
+.boton_rechazar{
+	padding-right: 45px;
+	padding-left: 45px;
+	background-color: firebrick;
+	margin-right: 15px;
+	margin-left: 5px;
+}
+
+footer{
+	
+	
+}

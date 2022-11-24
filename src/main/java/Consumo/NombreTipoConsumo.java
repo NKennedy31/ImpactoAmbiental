@@ -1,0 +1,14 @@
+package Consumo; //NO SE USA
+
+public enum NombreTipoConsumo {
+  GASNATURAL,
+  DIESEL, //Diesel/Gasoil es lo mismo
+  NAFTA,
+  CARBON,
+  GASOILCONSUMIDO,
+  NAFTACONSUMIDO,
+  ELECTRICIDAD,
+  CAMION,
+  UTILITARIO,
+  DISTANCIAMEDIARECORRIDA;
+}

@@ -1,0 +1,107 @@
+a{
+    text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+#logo img{
+    width:170px;
+    height:80px;
+}
+
+#menu{
+    background-color: #fff;
+    width: 100%;
+    vertical-align: top;
+    padding: 20px 10px;
+    text-align: center;
+}
+
+.item {
+    display: inline-block;
+}
+
+#access a {
+    color: #4dab4d;
+    float: left;
+    font-family: "Nunito", Sans-serif;
+    font-size: 90%;
+    font-weight: 300;
+    margin: auto;
+    letter-spacing: 1px;
+    padding: 10px;
+}
+
+ #access a:hover {
+    color: #fff;
+    background-color: #4dab4d;
+    padding: 15px;
+  }
+
+#access ul {
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#access li{
+    display: inline-block;
+    padding: 10px 35px;
+}
+
+.container{
+    background-color: #EDF4EA;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.item-menu ul{
+  display: none;
+}
+.item-menu input[type="checkbox"] {
+    opacity: 0;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width:20px;
+}
+
+.item-menu input[type=checkbox]:checked ~ label[for="menu-burguer"]{
+    display: block;
+    margin-top: 20px;
+}
+.item-menu input[type=checkbox]:checked ~ ul{
+    display: block;
+}
+
+
+.item-menu label[for="menu-burguer"]{
+  box-sizing: border-box;
+  display: inline-block;
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  text-align: center;
+  user-select: none;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.item-menu ul li {
+  display: block;
+  background: lightgrey;
+  margin: 0;
+  padding: 10px;
+  list-style: none;
+  border-bottom: 1px solid grey;
+}
+

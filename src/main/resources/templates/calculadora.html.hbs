@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aceptar vinculacion - Impacto Ambiental</title>
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" type="text/css" href="/css/calculadora_disenio.css">
+
+</head>
+	
+	<header>
+	<div id="menu">
+                <div id="logo" class="item">
+                    <a href="/"><img src="../img/huella-carbono.png"/></a>
+                </div>
+                <div id="access" class="item">
+                    <nav>
+                        <ul>
+                            <li><a href="/">INICIO</a></li>
+                            <li><a href="/contacto">CONTACTO</a></li>
+                            <li><a href="https://www.instagram.com/mihuelladecarbono/">INSTAGRAM</a></li>
+                            <li><a href="https://youth.europa.eu/get-involved/sustainable-development/how-reduce-my-carbon-footprint_es">CONSEJOS</a></li>
+
+                            {{#if sesionIniciada}}
+                                <li><a href="/logout">CERRAR SESIÓN</a></li>
+                             {{else}}
+                                <li><a href="/login">INICIAR SESIÓN</a></li>
+                            {{/if}}
+                        </ul>
+                    </nav>
+                </div>
+           </div>
+	</header>
+	
+	<body>
+        <section class="calculadora">
+        <form method="GET" action="/calculadora/calculo">
+            <h1>Calculadora HC</h1>
+                <h4 class= "">Ingrese fecha de la huella de carbono que quiere saber</h4>
+                <label for="nombre">Fecha:</label>
+                <input type="text" class= "input" id="nombre"/>
+                <br>
+                <input type="submit" value="calcular"/>
+         </form>
+        </section>
+	</body>
+	
+	<footer class="col-12">
+        <span class="col-6">Copyright 2022 © Impacto Ambiental</span>
+        <span class="col-6">Información de contacto:<a href = "mailto:impactoAmbiental@gmail.com" target = _blank> impactoAmbiental@gmail.com</a></span>
+    </footer>
+	
+</html>

@@ -1,0 +1,23 @@
+{{#partial  "titulo"}}
+    <title>Impacto Ambiental - aceptar_vinculacion</title>
+{{/partial}}
+{{#partial "contenido"}}
+    {{#each postulaciones}}
+        <section class="container">
+            <ul>
+                <li>{{nombre}} {{apellido}}</li>
+                <li>{{documento}}</li>
+                <li>-------------</li>
+            </ul>
+
+            <form class= "vincular" method="POST" action = "/vinculaciones_pendientes/rechazar">
+                <input type="submit" value="rechazar" class="boton_rechazar">
+            </form>
+            <form class= "vincular" method="POST" action = "/vinculaciones_pendientes/vincular">
+                <input type="submit" value="vincular" class="boton_vincular">
+             </form>
+        </section>
+	{{/each}}
+{{/partial}}
+
+{{> layout.html.hbs }}

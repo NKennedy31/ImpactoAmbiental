@@ -1,0 +1,42 @@
+{{# partial "titulo" }}
+    <title>Registro de trayectos</title>
+{{/partial}}
+{{#partial "contenido" }}
+    <div id="trayectos" class="container">
+        <h2>Registrá tu Trayecto</h2>
+        <form method="POST" action="/trayectos">
+                <div>
+                  <label for="agregarTramo">¿Desea agregar un nuevo tramo?:</label>
+                  <select class=" input" id="agregarTramo" name="agregarTramo" required>
+                    <option value="" selected> Seleccione ...</option>
+                    <option value="no">Terminar trayecto</option>
+                    <option value="otroTramo">Otro tramo</option>
+                  </select>
+                </div>
+
+                <div id="organizacion">
+                    <label for="organizacion">Organización del trayecto:</label>
+                    <input class="input" name="organizacion" type="text" >
+                </div>
+
+                <div>
+                    <input type="submit" value="Continuar">
+                </div>
+        </form>
+    </div>
+
+{{/partial}}
+
+{{# partial "js"}}
+ document.getElementById('organizacion').style.display = "none";
+    document.querySelector('#agregarTramo').addEventListener('change',function(){
+        if(document.getElementById('agregarTramo').value == "no"){
+            document.getElementById('organizacion').style.display = "block";
+        }else{
+            document.getElementById('organizacion').style.display = "none";
+        }
+    });
+{{/partial}}
+
+
+{{> layout.html.hbs }}

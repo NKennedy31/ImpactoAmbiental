@@ -1,0 +1,41 @@
+{{# partial "titulo" }}
+    <title>Reportes</title>
+    <link rel="stylesheet" href="../css/reportes.css">
+{{/partial}}
+
+{{# partial "contenido" }}
+	<section class="container">
+	<h1>Reportes</h1>
+	{{#if reportes-organizacion}}
+	<!--<h4>Huella de carbono total de la organizacion: {{huellaDeCarbonoOrganizacion}}</h4>-->
+	
+	<h4>Composicion de la huella de carbono de la organizacion</h4>
+	{{#composicionHuellaDeCarbonoOrganizacion}}
+   	<lu>
+   		<li>El nombre de la medicion es: {{tipoConsumo.nombre}} y el valor es: {{valor}}</li>
+   	</lu>    	
+  {{/composicionHuellaDeCarbonoOrganizacion}}
+  
+  <h4>Evolucion de la huella de carbono de la organizacion</h4>
+  <!--{{#evolucionHuellaDeCarbonoOrganizacion}}
+   	<lu>
+   		<li>Valor hc en el periodo  {{valor}}</li>
+   	</lu>    
+   	{{/evolucionHuellaDeCarbonoOrganizacion}}-->
+   {{else}}
+   	
+  <h4>Huella de carbono total del sector: {{huellaDeCarbonoSector}}</h4>
+	
+	<h4>Composicion de la huella de carbono del sector</h4>
+	{{#composicionHuellaDeCarbonoSector}}
+   	<lu>
+   		<li>El nombre de la medicion es: {{tipoConsumo.nombre}} y el valor es: {{valor}}</li>
+   	</lu>    	
+  {{/composicionHuellaDeCarbonoSector}}
+  
+  <h4>Evolucion de la huella de carbono de la organizacion</h4>
+   	
+   {{/if}}
+	</section>
+{{/partial}}
+{{> layout.html.hbs }}

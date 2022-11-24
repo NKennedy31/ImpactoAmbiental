@@ -1,0 +1,20 @@
+{{# partial "titulo" }}
+    <title>Impacto Ambiental - proponer-vinculacion</title>
+{{/partial}}
+
+{{#partial "contenido" }}
+    <section class="container">
+
+        {{#each sectores}}
+            <form method="POST" action="vinculacion/nueva">
+                <p>{{organizacion.razonSocial}} sector {{id}} <input type= "submit" value= "postularse"> </p>
+            </form>
+        {{/each}}
+
+
+
+
+    </section>
+{{/partial}}
+
+{{> layout.html.hbs }}

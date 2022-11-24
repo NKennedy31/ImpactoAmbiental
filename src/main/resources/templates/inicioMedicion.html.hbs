@@ -1,0 +1,68 @@
+{{# partial "titulo" }}
+    <title>Mediciones</title>
+    <link rel="stylesheet" href="../css/mediciones.css">
+{{/partial}}
+
+{{# partial "contenido" }}
+	<section class="container">
+	<h1>Mediciones</h1>
+	<p>Elija el tipo de medicion que quiera ingresar</p>
+	<div>
+	<select id = "opciones-medicion">
+    			<option selected value = "select">--Por favor elija una opción--</option>
+        	<option name = "ingreso-medicion" value = "medicion">Ingresar medicion</option>
+        	<option name = "ingreso-csv" value = "csv">Ingresar mediciones(csv)</option>
+    	</select>
+  </div>
+  <div id = "medicion">
+  <form method="POST" action="/medicion/nueva">
+    <label for="nombre_tipo_consumo">Tipo de Consumo</label>
+    	<select class="input" name="tipo-de-consumo">
+    			<option selected value="select-tipo-consumo">--Por favor elija una opción--</option>
+        	<option value = "GASNATURAL">Gas Natural</option>
+        	<option value = "DIESEL">Diesel</option>
+        	<option value = "NAFTA">Nafta</option>
+     	 	  <option value = "CARBON">Carbon</option>
+      	  <option value = "GASOILCONSUMIDO">Gasoil Consumido</option>
+      	  <option value = "NAFTACONSUMIDA">Nafta Consumida</option> 
+    	    <option value = "ELECTRICIDAD">Electricidad</option>
+  	      <option value = "CAMION">Camion</option>
+	        <option value = "UTILITARIO">Utilitario</option>
+        	<option value = "DISTANCIAMEDIARECORRIDA">Distancia Media Recorrida</option> 
+    	</select> <br>
+    
+    	<label for="valor">Valor Consumo </label>
+    	<input class="input" name="valor" type="number" min="1" max="100" ><br>
+    
+    	<label for="imputacion">Imputacion </label>
+    	<input class="input" name="imputacion" type="text"><br>
+    
+    	<input type="submit">
+	</form>
+  </div>
+  <div id = "csv">
+  	<form method="POST" action="/medicion/csv">
+    	<label for="valor">Archivo csv </label>
+    	<input class="input" name="csv" type="file" accept = ".csv"><br>
+    
+    	<input type="submit">
+	</form>
+	</div>
+	</section>
+	
+{{/partial}}
+
+{{# partial "js"}}
+    document.getElementById('medicion').style.display = "none";
+    document.getElementById('csv').style.display = "none";
+    document.querySelector('#opciones-medicion').addEventListener('change',function(){
+        if(document.getElementById('opciones-medicion').value == "medicion"){
+            document.getElementById('medicion').style.display = "block";
+            document.getElementById('csv').style.display = "none";
+        }else{
+            document.getElementById('csv').style.display = "block";
+            document.getElementById('medicion').style.display = "none";
+        }
+    });
+{{/partial}}
+{{> layout.html.hbs }}

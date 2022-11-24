@@ -1,0 +1,33 @@
+<header>
+    <div id="menu">
+        <div id="logo" class="item">
+            <a href="/"><img src="img/huella-carbono.png"/></a>
+        </div>
+        <div id="access" class="item">
+            <nav>
+                <ul>
+                    <li><a href="/">INICIO</a></li>
+                    <li><a href="/contacto">CONTACTO</a></li>
+                    <li><a href="https://www.instagram.com/mihuelladecarbono/">INSTAGRAM</a></li>
+                    <li><a href="https://youth.europa.eu/get-involved/sustainable-development/how-reduce-my-carbon-footprint_es">CONSEJOS</a></li>
+
+                    {{#if sesionIniciada}}
+                    <div id="item-menu">
+                        <nav ><input type="checkbox" id="menu">
+                          <label for="menu"> ☰ </label>
+                          <ul>
+                            <li>Link 1</li>
+                            <li>Link 2</li>
+                            <li>Link 3</li>
+                            <li>Link 4</li>
+                          </ul>
+                          </nav>
+                     </div>
+                     {{else}}
+                        <li><a href="/login">INICIAR SESIÓN</a></li>
+                    {{/if}}
+                </ul>
+            </nav>
+        </div>
+   </div>
+</header>

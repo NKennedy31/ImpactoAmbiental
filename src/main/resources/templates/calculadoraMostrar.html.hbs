@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aceptar vinculacion - Impacto Ambiental</title>
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" type="text/css" href="/css/calculadora_disenio.css">
+
+</head>
+
+	<header>
+	<div id="menu">
+                <div id="logo" class="item">
+                    <a href="/"><img src="../img/huella-carbono.png"/></a>
+                </div>
+                <div id="access" class="item">
+                    <nav>
+                        <ul>
+                            <li><a href="/">INICIO</a></li>
+                            <li><a href="/contacto">CONTACTO</a></li>
+                            <li><a href="https://www.instagram.com/mihuelladecarbono/">INSTAGRAM</a></li>
+                            <li><a href="https://youth.europa.eu/get-involved/sustainable-development/how-reduce-my-carbon-footprint_es">CONSEJOS</a></li>
+
+                            {{#if sesionIniciada}}
+                                <li><a href="/logout">CERRAR SESIÓN</a></li>
+                             {{else}}
+                                <li><a href="/login">INICIAR SESIÓN</a></li>
+                            {{/if}}
+                        </ul>
+                    </nav>
+                </div>
+           </div>
+	</header>
+	<section class="container">
+	<h1>Calculadora</h1>
+   
+   {{#if reporteHCOrganizacion}}
+   <li><p>Huella de carbono total {{huellaDeCarbonoOrganizacion}}</p></li>
+   
+   
+   {{else}}
+   {{#if composicionHcOrganizacion}}
+   {{#composicionHuellaDeCarbonoOrganizacion}}
+   	<lu>
+   		<li>El nombre de la medicion es: {{tipoConsumo.nombre}} y el valor es: {{valor}}</li>
+   	</lu>    	
+   	{{/composicionHuellaDeCarbonoOrganizacion}}  
+  
+  
+   {{else}}
+   {{#if composicionHcSector}}
+   {{#composicionHuellaDeCarbonoSector}}
+   	<lu>
+   		<li>El nombre de la medicion es: {{tipoConsumo.nombre}} y el valor es: {{valor}}</li>
+   	</lu>    
+   	{{/composicionHuellaDeCarbonoSector}}   
+   {{/if}} 
+   {{/if}}
+
+   <!--{{#if evolucionHcOrganizacion}}
+    {{#evolucionHuellaDeCarbonoOrganizacion}}
+   	<lu>
+   		<li>El nombre de la medicion es: {{tipoConsumo.nombre}} y el valor es: {{valor}}</li>
+   	</lu>    
+   	{{/evolucionHuellaDeCarbonoOrganizacion}}   
+   
+   
+   {{else}}
+    {{#evolucionHuellaDeCarbonoSector}}
+   	<lu>
+   		<li>El nombre de la medicion es: {{tipoConsumo.nombre}} y el valor es: {{valor}}</li>
+   	</lu>    
+   {{/evolucionHuellaDeCarbonoSector}}
+   {{/if}}
+
+
+   {{else}}
+   <li><p>Huella de carbono total del sector: {{huellaDeCarbonoSector}}</p></li>
+   {{/if}}
+   
+   {{#if reporteHCSector}}
+   <li><p>Huella de carbono total del sector: {{huellaDeCarbonoSector}}</p></li>
+   {{/if}}
+   
+	</section>
+{{/partial}}
+{{> layout.html.hbs}}

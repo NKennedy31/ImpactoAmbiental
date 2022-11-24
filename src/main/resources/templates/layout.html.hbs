@@ -1,0 +1,65 @@
+<html>
+	<head>
+  	<link rel="stylesheet" href="/css/main.css">
+  	<link rel="stylesheet" href="/css/header.css">
+  	<link rel="stylesheet" href="/css/footer.css">
+  	<script src="https://kit.fontawesome.com/e88a2efb7d.js" crossorigin="anonymous"></script>
+  	{{# block "titulo" }}
+  	{{/block}}
+	</head>
+	<body>
+        <header>
+            <div id="menu">
+                <div id="logo" class="item">
+                    <a href="/"><img src="/img/huella-carbono.png"/></a>
+                </div>
+                <div id="access" class="item">
+                    <nav>
+                        <ul>
+                            <li><a href="/">INICIO</a></li>
+                            <li><a href="/contacto">CONTACTO</a></li>
+                            <li><a href="https://www.instagram.com/mihuelladecarbono/" target="_blank">INSTAGRAM</a></li>
+                            <li><a target="_blank" href="https://youth.europa.eu/get-involved/sustainable-development/how-reduce-my-carbon-footprint_es">CONSEJOS</a></li>
+
+                            {{#unless sesionIniciada}}
+
+                                <li><a href="/login">INICIAR SESIÓN</a></li>
+                            {{/unless}}
+                        </ul>
+                    </nav>
+                </div>
+                <div id="sidebar" class="item">
+                {{#if sesionIniciada}}
+                    <nav class="item-menu">
+                      <input type="checkbox" id="menu-burguer">
+                      <label for="menu-burguer"> ☰ </label>
+                      <ul>
+                      <li>Usuario: {{usuarioSesion.name}}</li>
+                      <li>Rol: {{usuarioSesion.rol}}</li>
+                        {{#each links}}
+                            <li><a href="{{this.url}}">{{this.name}}</a></li>
+                        {{/each}}
+                      </ul>
+                      </nav>
+                {{/if}}
+                </div>
+
+           </div>
+        </header>
+  	<main>
+    	{{# block "contenido" }}
+    	{{/block}}
+  	</main>
+  	<footer>
+  	<div class="center">
+        <span >Copyright 2022 © Impacto Ambiental</span><br>
+        <span >Información de contacto:<a href = "mailto:impactoAmbiental@gmail.com" target="_blank"> impactoAmbiental@gmail.com</a></span><br>
+        <span><i class="fa-brands fa-twitter"></i></span><span><i class="fa-brands fa-instagram"></i></span>
+    </div>
+  </footer>
+</body>
+<script type="text/javascript">
+   {{# block "js" }}
+   {{/block}}
+</script>
+</html>

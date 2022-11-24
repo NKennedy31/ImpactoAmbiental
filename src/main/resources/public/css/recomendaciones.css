@@ -1,0 +1,15 @@
+h2 {
+    margin-top: 20px;
+    font-weight: 300;
+    font-size: 45px;
+    text-align: center;
+}
+
+.center{
+    text-align: center;
+}
+
+.item{
+    display:inline-block;
+
+}

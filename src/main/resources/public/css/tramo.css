@@ -1,0 +1,40 @@
+body {
+    height: auto;
+    width: 100%;
+    font-family: Lato, sans-serif;
+    font-weight: 300;
+}
+
+a{
+    text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+    margin-top: 20px;
+    font-weight: 300;
+    font-size: 45px;
+    text-align: center;
+}
+
+.input{
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input[type=button], input[type=submit] {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
